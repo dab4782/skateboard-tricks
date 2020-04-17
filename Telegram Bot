@@ -1,6 +1,5 @@
  # imports
 import telebot
-import config
 from telebot import types
 
 
@@ -42,7 +41,7 @@ def lalala(message):
             bot.send_message(message.chat.id, "https://youtu.be/phsJk5_jHkU")
         elif message.text == "KICKFLIP" :
             bot.send_message(message.chat.id, "https://youtu.be/YOf0XeI7KzU")
-         elif message.text == "360° FLIP" :
+        elif message.text == "360° FLIP" :
             bot.send_message(message.chat.id, "https://youtu.be/PnuobIzTPMs")
 
 
