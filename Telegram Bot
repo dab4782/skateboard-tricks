@@ -1,0 +1,50 @@
+ # imports
+import telebot
+import config
+from telebot import types
+
+
+    # telegram bot API
+bot = telebot.TeleBot("1075833258:AAFwaxhodNKAoORjFCkODWf2WLiVXt56uUQ")
+
+    # start message
+@bot.message_handler(commands=['start'])
+def welcome(message):
+    bot.send_message(message.chat.id, "Hello, {0.first_name}!\nI - <b>{1.first_name}</b> bot, I will  teach you some tricks on skateboard".format(message.from_user, bot.get_me()),
+    parse_mode='html', reply_markup=markup)
+
+
+    # keyboard
+markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+button1 = types.KeyboardButton("OLLIE")
+button2 = types.KeyboardButton("FS VANETTI")
+button3 = types.KeyboardButton("BS VANETTI")
+button4 = types.KeyboardButton("SHOVE IT + POP SHOVE IT")
+button5 = types.KeyboardButton("HEELFLIP")
+button6 = types.KeyboardButton("KICKFLIP")
+button7 = types.KeyboardButton("360° FLIP")
+
+markup.add(button1, button2, button3, button4, button5, button6, button7)
+
+    #button commands
+@bot.message_handler(content_types=['text'])
+def lalala(message):
+    if message.chat.type == 'private':
+        if message.text == "OLLIE":
+            bot.send_message(message.chat.id, "https://youtu.be/VasSLuFO4wY")
+        elif message.text == "FS VANETTI":
+            bot.send_message(message.chat.id, "https://youtu.be/OqYb98vp0zI")
+        elif message.text == "BS VANETTI":
+            bot.send_message(message.chat.id, "https://youtu.be/5RtkYzx3TdE")
+        elif message.text == "SHOVE IT + POP SHOVE IT" :
+            bot.send_message(message.chat.id, "https://youtu.be/tyXwyN_t-is")
+        elif message.text == "HEELFLIP" :
+            bot.send_message(message.chat.id, "https://youtu.be/phsJk5_jHkU")
+        elif message.text == "KICKFLIP" :
+            bot.send_message(message.chat.id, "https://youtu.be/YOf0XeI7KzU")
+         elif message.text == "360° FLIP" :
+            bot.send_message(message.chat.id, "https://youtu.be/PnuobIzTPMs")
+
+
+    # START
+bot.polling( none_stop = True )
