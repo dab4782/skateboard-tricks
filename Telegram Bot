@@ -4,7 +4,7 @@ from telebot import types
 
 
     # telegram bot API
-bot = telebot.TeleBot("1075833258:AAFwaxhodNKAoORjFCkODWf2WLiVXt56uUQ")
+bot = telebot.TeleBot("Bot's API @BotFather")
 
     # start message
 @bot.message_handler(commands=['start'])
